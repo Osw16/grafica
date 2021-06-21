@@ -1,28 +1,47 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Animation/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Animation from './components/Animation.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Animation
   }
 }
 </script>
 
 <style>
+@font-face {
+  font-family: "gibson-regular";
+  src: url(./fonts/GibsonRegular.woff);
+}
+@font-face {
+  font-family: "gibson-bold";
+  src: url(./fonts/GibsonBoldIt.woff);
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: rgb(69, 246, 108);
+}
+* {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+h1 {
+  font-family: "gibson-bold";
+  color: #ffffff;
+}
+h2,
+h3 {
+  font-family: "gibson-regular";
+  color: #ffffff;
 }
 </style>
