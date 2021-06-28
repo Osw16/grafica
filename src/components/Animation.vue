@@ -148,6 +148,7 @@ export default {
         const maxDamageXmin = Math.max(...mappedDamageXmin);
         this.damagePerMinuteMax = maxDamageXmin;
       });
+      // datos del jugador
     fetch(
       "https://streaming.lvp.global/api/stats?url=https://api.lvp.global/lol/v1/competitions/a3141008-3e14-11eb-892c-065e1d3d7cd4/players/0b7c856e-15e0-11e9-88c3-22000ac39d70"
     )
@@ -166,7 +167,7 @@ export default {
         console.log(playerArrData);
       });
 
-    // data del jugador
+    // métricas del jugador
     fetch(
       "https://streaming.lvp.global/api/stats?url=https://api.lvp.global/lol/v1/competitions/a3141008-3e14-11eb-892c-065e1d3d7cd4/players/0b7c856e-15e0-11e9-88c3-22000ac39d70"
     )
