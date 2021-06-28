@@ -108,7 +108,7 @@ export default {
     // gsap.to(".container", { y: -130, duration: 1,repeat:1, yoyo:true,repeatDelay:10, ease:"none"});
   },
   created() {
-    // métrica maximas
+    // métrica maximas de la competicion
     fetch(
       "https://streaming.lvp.global/api/stats?url=https://api.lvp.global/lol/v1/competitions/a3141008-3e14-11eb-892c-065e1d3d7cd4/players"
     )
@@ -164,48 +164,6 @@ export default {
           (this.playerDamagePerMinute = info.data.metrics.damagePerMinute),
         ];
         console.log(playerArrData);
-      });
-    // métrica maximas de la competicion
-    fetch(
-      "https://streaming.lvp.global/api/stats?url=https://api.lvp.global/lol/v1/competitions/a3141008-3e14-11eb-892c-065e1d3d7cd4/players"
-    )
-      .then((response) => response.json())
-      .then((json) => {
-        let data = json.data;
-        // maximo valor de KDA
-        let arrKda = data.map((m) => {
-          return { kda: m.metrics.kda };
-        });
-        const mappedKda = arrKda.map((obj) => obj.kda);
-        const maxKda = Math.max(...mappedKda);
-        console.log(maxKda);
-        // maximo valor de creepsPerMinute
-        let arrCreepsXmin = data.map((m) => {
-          return { creepsPerMinute: m.metrics.creepsPerMinute };
-        });
-        const mappedCreepsXmin = arrCreepsXmin.map(
-          (obj) => obj.creepsPerMinute
-        );
-        const maxCreepsXmin = Math.max(...mappedCreepsXmin);
-        console.log(maxCreepsXmin);
-
-        // maximo valor de goldPerMinute
-        let arrGoldXmin = data.map((m) => {
-          return { goldPerMinute: m.metrics.goldPerMinute };
-        });
-        const mappedGoldXmin = arrGoldXmin.map((obj) => obj.goldPerMinute);
-        const maxGoldXmin = Math.max(...mappedGoldXmin);
-        console.log(maxGoldXmin);
-
-        // maximo valor de damagePerMinute:
-        let arrDamagesXmin = data.map((m) => {
-          return { damagePerMinute: m.metrics.creepsPerMinute };
-        });
-        const mappedDamagesXmin = arrCreepsXmin.map(
-          (obj) => obj.damagePerMinute
-        );
-        const maxDamagesXmin = Math.max(...mappedGoldXmin);
-        console.log(maxCreepsXmin);
       });
 
     // data del jugador
